@@ -14,6 +14,8 @@ add_subdirectory(pybind11)
 
 option(DIFFVG_CUDA "Build diffvg with GPU code path?" ON)
 
+add_compile_options("-DCMAKE_C_COMPILER=/usr/bin/gcc-7")
+
 if(DIFFVG_CUDA)
     message(STATUS "Build with CUDA support")
     find_package(CUDA 10 REQUIRED)
